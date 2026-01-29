@@ -1,98 +1,191 @@
-# Get editor completions based on the config schema
-# "$schema" = 'https://starship.rs/config-schema.json'
-
-# ---------- Define format ---------
+"$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+[ ](red)\
+$os\
+$username\
+[](bg:maroon fg:red)\
 $directory\
-$direnv\
+[](fg:maroon bg:yellow)\
 $git_branch\
 $git_commit\
 $git_state\
-$git_metrics\
 $git_status\
-$docker_context\
+[](bg:green fg:yellow)\
 $package\
+[](bg:teal fg:green)\
 $python\
-$conda\
 $rust\
+[](bg:sky fg:teal)\
+$conda\
+[](bg:sapphire fg:sky)\
 $kubernetes\
+[](bg:blue fg:sapphire)\
 $terraform\
-$fill\
+[](bg:lavender fg:blue)\
 $time\
-$line_break\
+[](bg:mauve fg:lavender)\
 $battery\
+[ ](fg:mauve)\
 $cmd_duration\
-$status\
+$line_break\
 $character"""
 
-# ---------- Define modules ----------
-[container]
-format = '[$symbol \[$name\]]($style '
+palette = 'catppuccin_mocha'
 
-[kubernetes]
-symbol = ' '
-format = '[on $symbol ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[os]
 disabled = false
-[package]
-format = '[via $symbol$version ]($style)'
+style = "bg:red"
+format = '[[$symbol](bg:red fg:crust)]($style)'
 
-[terraform]
-symbol = '󱁢 '
-format = '[via $symbol$version $workspace]($style) '
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
 
-# --- Beginn of Git ---
+[username]
+show_always = true
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:maroon fg:crust"
+read_only = "󰌾"
+format = "[ $path $read_only ]($style)"
+truncation_length = 3
+truncation_symbol = "/"
+
+[directory.substitutions]
+"Dokumente" = "󰈙 "
+"Downloads" = " "
+"Musik" = "󰝚 "
+"Bilder" = " "
+"Developer" = "󰲋 "
+
+[direnv]
+disabled = false
+style = "bg:peach fg:crust"
+format = '[$symbol$allowed]($style)'
+
 [git_branch]
+style = "bg:yellow"
 always_show_remote = true
 symbol = ' '
 truncation_symbol = ''
-format = '[ on $symbol$branch(:$remote_branch)]($style) '
+format = '[[ $symbol$branch(:$remote_branch)](fg:crust bg:yellow)]($style)'
+
 [git_commit]
 commit_hash_length = 7
-style = 'bold blue'
+style = "bg:yellow"
 only_detached = false
-format = '[\($hash\)]($style) '
+format = '[[\($hash\)](fg:crust bg:yellow)]($style)'
 
 [git_state]
-style = 'bold red'
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
-
-[git_metrics]
-added_style = 'bold blue'
-deleted_style = 'bold red'
+style = "bg:yellow"
+format = '[[\($state($progress_current/$progress_total)\)](fg:crust bg:yellow)]($style)'
 
 [git_status]
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-# --- End of Git ---
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
+[package]
+style = "bg:green"
+format = '[[ $symbol$version](fg:crust bg:green)]($style)'
 
-
-# --- Beginn of Python ---
 [python]
-symbol = '  '
-style = 'yellow bold'
+symbol = ' '
+style = 'bg:teal'
 pyenv_version_name = false
-format = '[via ${symbol}${pyenv_prefix}($version ) (\($virtualenv\) )]($style)'
-
-[conda]
-symbol = '  '
-style = 'bold green'
-format = '[via $symbol$environment]($style) '
-ignore_base = false
-detect_env_vars = ["CONDA_DIR"]
-# --- End of Python ---
+format = '[[ ${symbol}${pyenv_prefix}($version)(\($virtualenv\))](bg:teal fg:crust)]($style)'
 
 [rust]
-symbol = '🦀 '
-style = '#ffa500'
+symbol = '🦀'
+style = 'bg:teal'
 detect_extensions = ['rs']
 detect_files = ['Cargo.toml']
-format = '[ via $symbol($version )]($style)'
+format = '[[ $symbol($version)](bg:teal fg:crust)]($style)'
 
+[conda]
+symbol = ' '
+style = 'bg:sky'
+format = '[[ $symbol$environment](bg:sky fg:crust)]($style)'
+ignore_base = false
 
-# --- System modules ---
+[kubernetes]
+style =	"bg:sapphire"
+symbol = ''
+format = '[[$symbol$workspace](bg:sapphire fg:crust]($style)'
+
+[terraform]
+style = "bg:blue"
+format = '[[$symbol$workspace](bg:blue fg:crust]($style)' 
+
+[time]
+style = "bg:lavender"
+format = '[[  $time](bg:lavender fg:crust)]($style)'
+disabled = false
+
+[battery]
+format = '[[ $symbol$percentage ](bg:mauve fg:crust)]($style)'
+
+[[battery.display]]
+threshold = 33
+style = 'fg:crust'
+
+[[battery.display]]
+threshold = 66
+style = 'fg:crust'
+
+[[battery.display]]
+threshold = 99
+style = 'fg:crust'
+
 [status]
 symbol = '✗'
 not_found_symbol = ' '
@@ -102,53 +195,11 @@ format = '[\[$status $common_meaning $signal_name $maybe_int\]]($style) '
 map_symbol = false
 disabled = false
 
-[os]
-disabled = false
-
-[os.symbols]
-Fedora = ' '
-
-[time]
-style = 'bold white'
-format = '[󱑆 $time]($style) '
-disabled = false
-
-[character]
-success_symbol = '[❯](bold green) '
-error_symbol = '[✗](bold red) '
-
 [cmd_duration]
 min_time = 500
 style = 'bold blue'
 format = '[\[$duration\]](${style})'
 
-[fill]
-symbol = ' '
-
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-empty_symbol = '💀 '
-format = '[ $symbol$percentage]($style) '
-
-[[battery.display]]
-threshold = 33
-style = 'bold red'
-
-[[battery.display]] 
-threshold = 66
-style = 'bold yellow'
-
-[[battery.display]] 
-threshold = 100
-style = 'bold green'
-
-[directory]
-truncation_length = 4
-truncation_symbol = ' /'
-read_only = ' 󰌾'
-read_only_style = 'red'
-home_symbol = ' moritz'
-
-[direnv]
-disabled = false
+[character]
+success_symbol = '[ ❯](bold green) '
+error_symbol = '[ ✗](bold red) '
