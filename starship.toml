@@ -8,29 +8,26 @@ $username\
 $directory\
 [](bg:peach fg:maroon)\
 $git_branch\
-[](bg:yellow fg:peach)\
 $git_commit\
-[](bg:green fg:yellow)\
+[](bg:yellow fg:peach)\
 $git_state\
-[](bg:teal fg:green)\
 $git_status\
-[](bg:sky fg:teal)\
+[](bg:green fg:yellow)\
 $package\
-[](bg:sapphire fg:sky)\
+[](bg:teal fg:green)\
 $python\
-[](bg:blue fg:sapphire)\
 $rust\
-[](bg:lavender fg:blue)\
+[](bg:sky fg:teal)\
 $conda\
-[](bg:mauve fg:lavender)\
+[](bg:sapphire fg:sky)\
 $kubernetes\
-[](bg:pink fg:mauve)\
+[](bg:blue fg:sapphire)\
 $terraform\
-[](bg:flamingo fg:pink)\
+[](bg:lavender fg:blue)\
 $time\
-[](bg:rosewater fg:flamingo)\
+[](bg:mauve fg:lavender)\
 $battery\
-[ ](fg:rosewater)\
+[ ](fg:mauve)\
 $cmd_duration\
 $line_break\
 $character"""
@@ -98,57 +95,57 @@ format = '[[ $symbol$branch(:$remote_branch)](fg:crust bg:peach)]($style)'
 
 [git_commit]
 commit_hash_length = 7
-style = "bg:yellow"
+style = "bg:peach"
 only_detached = false
-format = '[[\($hash\)](fg:crust bg:yellow)]($style)'
+format = '[[\($hash\)](fg:crust bg:peach)]($style)'
 
 [git_state]
-style = "bg:green"
-format = '[[\($state($progress_current/$progress_total)\)](fg:crust bg:green)]($style)'
+style = "bg:yellow"
+format = '[[\($state($progress_current/$progress_total)\)](fg:crust bg:yellow)]($style)'
 
 [git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:crust bg:teal)]($style)'
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [package]
-style = "bg:sky"
-format = '[[ $symbol$version](fg:crust bg:sky)]($style)'
+style = "bg:green"
+format = '[[ $symbol$version](fg:crust bg:green)]($style)'
 
 [python]
 symbol = ' '
-style = 'bg:sapphire'
+style = 'bg:teal'
 pyenv_version_name = false
-format = '[[ ${symbol}${pyenv_prefix}($version)(\($virtualenv\))](bg:sapphire fg:crust)]($style)'
+format = '[[ ${symbol}${pyenv_prefix}($version)(\($virtualenv\))](bg:teal fg:crust)]($style)'
 
 [rust]
 symbol = '🦀'
-style = 'bg:blue'
+style = 'bg:teal'
 detect_extensions = ['rs']
 detect_files = ['Cargo.toml']
-format = '[[ $symbol($version)](bg:blue fg:crust)]($style)'
+format = '[[ $symbol($version)](bg:teal fg:crust)]($style)'
 
 [conda]
 symbol = ' '
-style = 'bg:lavender'
-format = '[[ $symbol$environment](bg:lavender fg:crust)]($style)'
+style = 'bg:sky'
+format = '[[ $symbol$environment](bg:sky fg:crust)]($style)'
 ignore_base = false
 
 [kubernetes]
-style =	"bg:mauve"
+style =	"bg:sapphire"
 symbol = ''
-format = '[[$symbol$workspace](bg:mauve fg:crust]($style)'
+format = '[[$symbol$workspace](bg:sapphire fg:crust]($style)'
 
 [terraform]
-style = "bg:pink"
-format = '[[$symbol$workspace](bg:pink fg:crust]($style)' 
+style = "bg:blue"
+format = '[[$symbol$workspace](bg:blue fg:crust]($style)' 
 
 [time]
-style = "bg:flamingo"
-format = '[[  $time](bg:flamingo fg:crust)]($style)'
+style = "bg:lavender"
+format = '[[  $time](bg:lavender fg:crust)]($style)'
 disabled = false
 
 [battery]
-format = '[[ $symbol$percentage ](bg:rosewater fg:crust)]($style)'
+format = '[[ $symbol$percentage ](bg:mauve fg:crust)]($style)'
 
 [[battery.display]]
 threshold = 33
