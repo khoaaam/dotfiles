@@ -17,8 +17,11 @@ $package\
 [](bg:teal fg:green)\
 $python\
 $rust\
+$typst\
 [](bg:sky fg:teal)\
 $conda\
+$nodejs\
+$deno\
 [](bg:sapphire fg:sky)\
 $kubernetes\
 [](bg:blue fg:sapphire)\
@@ -129,6 +132,16 @@ symbol = ' '
 style = 'bg:sky'
 format = '[[ $symbol$environment](bg:sky fg:crust)]($style)'
 ignore_base = false
+
+[nodejs]
+symbol = '󰎙 '
+style = 'bg:sky'
+format = '[[ $symbol($version )](bg:sky fg:crust)]($style)'
+disabled = false
+
+[deno]
+style = 'bg:sky'
+format = '[[ $symbol($version )](bg:sky fg:crust)]($style)'
 
 [kubernetes]
 style =	"bg:sapphire"
