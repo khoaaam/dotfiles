@@ -1,0 +1,13 @@
+# alias
+alias cfgz="nano ~/.zshrc"
+alias cfgs="nano ~/dotfiles/starship.toml"
+alias srcz="source ~/.zshrc"
+alias myr="mysql -u root -p"
+alias mym="mysql -u moritz -p"
+alias glp="git log --pretty=format:'    %C(#fab387)%h%Creset %<(10)%C(#cba6f7)%cd%C>'"
+alias glo="git log --oneline --color=always | sed \
+                -e 's/feat:/\x1b[38;2;166;227;161mfeat: \x1b[m/' \
+                -e 's/fix:/\x1b[38;2;243;139;168mfix: \x1b[m/' \
+                -e 's/chore:/\x1b[38;2;180;190;254mchore: \x1b[m/' \
+                -e 's/refactor:/\x1b[38;2;137;180;250mrefactor: \x1b[m/' \
+                -e 's/^/    /'"
