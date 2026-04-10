@@ -74,7 +74,7 @@ format = '[ $user]($style)'
 style = "bg:maroon fg:crust"
 read_only = "󰌾"
 format = "[ $path $read_only ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "/"
 
 [directory.substitutions]
