@@ -8,7 +8,6 @@ $username\
 $directory\
 [](bg:peach fg:maroon)\
 $git_branch\
-$git_commit\
 [](bg:yellow fg:peach)\
 $git_state\
 $git_status\
@@ -94,7 +93,7 @@ style = "bg:peach"
 always_show_remote = true
 symbol = ' '
 truncation_symbol = ''
-format = '[[ $symbol$branch(:$remote_branch)](fg:crust bg:peach)]($style)'
+format = '[[ $symbol$branch(:$remote_branch) ](fg:crust bg:peach)]($style)'
 
 [git_commit]
 commit_hash_length = 7
