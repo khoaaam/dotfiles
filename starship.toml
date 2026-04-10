@@ -22,6 +22,7 @@ $conda\
 $nodejs\
 $deno\
 [](bg:sapphire fg:sky)\
+$docker_context\
 $kubernetes\
 [](bg:blue fg:sapphire)\
 $terraform\
