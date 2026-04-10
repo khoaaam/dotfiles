@@ -154,7 +154,8 @@ format = '[[$symbol$workspace](bg:blue fg:crust]($style)'
 
 [time]
 style = "bg:lavender"
-format = '[[  $time](bg:lavender fg:crust)]($style)'
+time_format = '%H:%M'
+format = '[[  $time ](bg:lavender fg:crust)]($style)'
 disabled = false
 
 [battery]
