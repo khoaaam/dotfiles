@@ -103,11 +103,11 @@ format = '[[\($hash\)](fg:crust bg:peach)]($style)'
 
 [git_state]
 style = "bg:yellow"
-format = '[[\($state($progress_current/$progress_total)\)](fg:crust bg:yellow)]($style)'
+format = '[[\( $state($progress_current/$progress_total)\) ](fg:crust bg:yellow)]($style)'
 
 [git_status]
 style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+format = '[[( $all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [package]
 style = "bg:green"
