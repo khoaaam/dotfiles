@@ -1,6 +1,6 @@
 # alias
-alias cfgz="nano ~/.zshrc"
-alias cfgs="nano ~/dotfiles/starship.toml"
+alias cfgz="hx ~/.zshrc"
+alias cfgs="hx ~/dotfiles/starship.toml"
 alias srcz="source ~/.zshrc"
 alias myr="mysql -u root -p"
 alias mym="mysql -u moritz -p"
