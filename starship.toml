@@ -117,7 +117,7 @@ format = '[[ $symbol$version](fg:crust bg:green)]($style)'
 [python]
 symbol = ' '
 style = 'bg:teal'
-pyenv_version_name = false
+pyenv_version_name = true
 format = '[[ ${symbol}${pyenv_prefix}($version)(\($virtualenv\))](bg:teal fg:crust)]($style)'
 
 [rust]
