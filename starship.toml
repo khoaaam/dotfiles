@@ -29,9 +29,6 @@ $terraform\
 [](bg:lavender fg:blue)\
 $time\
 [](bg:mauve fg:lavender)\
-$battery\
-[ ](fg:mauve)\
-$cmd_duration\
 $line_break\
 $character"""
 
