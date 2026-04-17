@@ -26,9 +26,7 @@ $docker_context\
 $kubernetes\
 [](bg:blue fg:sapphire)\
 $terraform\
-[](bg:lavender fg:blue)\
-$time\
-[](bg:mauve fg:lavender)\
+[](fg:blue)\
 $line_break\
 $character"""
 
