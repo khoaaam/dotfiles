@@ -70,7 +70,7 @@ lint.extend-select = [
 ]
 
 lint.ignore = [
-    "COM812"
+    "COM812",
     "E501",  # Pycodestyle - line too long
     "D1",    # Pydocstyle - missing docstring in public module, class, or function
     "FBT003", # Flake8-boolean-trap - boolean position value in function call
