@@ -70,8 +70,9 @@ lint.extend-select = [
 ]
 
 lint.ignore = [
-    #"E501",  # Pycodestyle - line too long
-    #"D1",    # Pydocstyle - missing docstring in public module, class, or function
+    "COM812"
+    "E501",  # Pycodestyle - line too long
+    "D1",    # Pydocstyle - missing docstring in public module, class, or function
     "FBT003", # Flake8-boolean-trap - boolean position value in function call
     "D203",  # Pydocstyle - one blank line required before class docstring
     "D212",  # Pydocstyle - summary line should be immediately after the opening quotes.
@@ -101,3 +102,4 @@ lint.ignore = [
 # EM102   # Flake8-errmsg – f-string exceptions in test helpers are acceptable for debugging
 "test_*.py" = ["S101", "S105", "S106", "S107", "PLR2004", "SLF001", "D", "ANN", "ARG001", "PLC0415", "EM102"]
 "*_test.py" = ["S101", "S105", "S106", "S107", "PLR2004", "SLF001", "D", "ANN", "ARG001", "PLC0415", "EM102"]
+"conftest.py" = ["S101", "S105", "S106", "S107", "PLR2004", "SLF001", "D", "ANN", "ARG001", "PLC0415", "EM102"]
