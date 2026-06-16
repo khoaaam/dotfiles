@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 echo "Skript wird gestartet"
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
