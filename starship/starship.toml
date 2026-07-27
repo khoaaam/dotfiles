@@ -4,7 +4,6 @@ format = """
 [ ](red)\
 $os\
 [](bg:maroon fg:red)\
-$directory\
 [](bg:peach fg:maroon)\
 $git_branch\
 [](bg:yellow fg:peach)\
