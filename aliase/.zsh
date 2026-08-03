@@ -1,0 +1,33 @@
+# important aliase
+alias cfgz="hx ~/.zshrc"
+alias srcz="source ~/.zshrc"
+alias wake-desktop="wol 04:42:1A:21:C6:A8"
+alias gitui="gitui -t catppuccin-mocha.ron"
+
+# aliase for za modern alternative for ls
+alias ls="eza --icons --group-directories-first"
+alias ll="eza -lhF --icons --group-directories-first --git" 
+alias llt="eza --tree --level=2 -lhF --icons --group-directories-first --git"
+alias lla="eza -lahF --icons --group-directories-first --git"
+alias llta="eza --tree --level=2 -lahF --icons --group-directories-first --git"
+alias lt="eza --tree --level=2 --icons --group-directories-first --git"
+alias lta="eza --tree --level=2 --icons --group-directories-first --git -a"
+
+# aliase for ripgrep modern alternative for grep
+alias rgi="rg -i"
+alias rga="rg --hidden"
+alias rgl="rg -l"
+
+alias myr="mysql -u root -p"
+alias mym="mysql -u moritz -p"
+
+# aliase for git
+alias glp="git log --pretty=format:'	%C(#fab387)%h%Creset %<(10)%C(#cba6f7)%cd%C>'"
+alias glo="git log --oneline --color=always | sed \
+                -e 's/feat:/\x1b[38;2;0;255;0mfeat: \x1b[m/' \
+                -e 's/fix:/\x1b[38;2;255;0;0mfix: \x1b[m/' \
+                -e 's/chore:/\x1b[38;2;0;255;255mchore: \x1b[m/' \
+                -e 's/refactor:/\x1b[38;2;255;0;255mrefactor: \x1b[m/' \
+                -e 's/^/    /'"
+
+
