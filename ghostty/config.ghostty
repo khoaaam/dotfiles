@@ -1,3 +1,4 @@
 font-size = 16
 theme = Catppuccin Mocha
 window-decoration = true
+background-opcaity = 0.75
