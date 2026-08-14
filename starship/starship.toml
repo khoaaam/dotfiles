@@ -15,7 +15,7 @@ $package\
 [](bg:teal fg:green)\
 $python\
 $rust\
-$typst\
+$golang\
 [](bg:sky fg:teal)\
 $conda\
 $nodejs\
@@ -108,11 +108,17 @@ format = '[[($all_status$ahead_behind)](fg:crust bg:yellow)]($style)'
 style = "bg:green"
 format = '[[ $symbol$version](fg:crust bg:green)]($style)'
 
+[golang]
+style = 'bg:teal'
+symbol =' '
+format = '[[ ${symbol}${version}](bg:teal fg:crust)]($style)'
+
 [python]
 symbol = ' '
 style = 'bg:teal'
 pyenv_version_name = false
-format = '[[ ${symbol}](bg:teal fg:crust)]($style)'
+python_binary = [['mise', 'exec', '--', 'python']]
+format = '[[ ${symbol}${version}](bg:teal fg:crust)]($style)'
 
 [rust]
 symbol = '🦀'
