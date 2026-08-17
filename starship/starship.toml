@@ -19,13 +19,7 @@ $golang\
 [](bg:sky fg:teal)\
 $conda\
 $nodejs\
-$deno\
-[](bg:sapphire fg:sky)\
-$docker_context\
-$kubernetes\
-[](bg:blue fg:sapphire)\
-$terraform\
-[](fg:blue)\
+[](fg:sky)\
 $line_break\
 $character"""
 
